@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Birthday AR</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
+
+</head>
+
+<body>
+    <!-- music -->
+    <audio id="bgMusic" loop>
+        <source src="assets/birthday.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="loveMusic" loop>
+        <source src="assets/romantic.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="heartMusic">
+        <source src="assets/heartmusic.mp3" type="audio/mpeg">
+    </audio>
+    <!-- Poster -->
+
+    <div id="poster">
+
+        <img src="assets/birthdaypic.jpg" id="posterImg">
+
+    </div>
+
+    <!-- Greeting -->
+
+    <div id="greeting">
+
+        <h1>
+
+            🎂Happy Birthday Achu Dogi❤️
+
+        </h1>
+
+        <p>
+
+            A Special Surprise Is Waiting for You...
+
+        </p>
+
+    </div>
+
+    <!-- Gift -->
+
+    <div id="gift">
+
+        <img src="assets/gift.png" id="giftImg">
+
+        <p>
+
+            Tap Me
+
+        </p>
+
+    </div>
+
+    <!-- Video -->
+
+    <div id="videoContainer">
+
+        <video id="birthdayVideo" controls playsinline>
+
+            <source src="assets/demo1.mp4" type="video/mp4">
+
+        </video>
+
+    </div>
+    <div id="specialVideoContainer">
+
+        <video id="specialVideo" playsinline>
+
+            <source src="assets/special.mp4" type="video/mp4">
+
+        </video>
+        <button id="skipSpecialVideo">Skip ⏭️</button>
+    </div>
+
+    <!-- Love Quote -->
+
+    <div id="quote">
+
+        ❤️
+
+        <br>
+
+        Every moment with you
+        becomes a story worth remembering,
+        every smile of yours
+        makes my heart skip a beat,
+        and every day with you
+        feels like the most beautiful memory.
+
+        No matter where life takes us,
+        you will always be
+        my favourite memory,
+        my happiest place,
+        and the most precious part
+        of my heart.
+
+        ❤️ Forever and Always ❤️
+
+    </div>
+
+    <!-- Final Heart -->
+
+    <div id="heart">
+
+        ❤️<br>
+        Touch My Heart
+    </div>
+
+    <!-- Replay -->
+
+    <button id="replay">
+
+        Replay
+
+    </button>
+
+    <!-- MindAR -->
+
+    <a-scene mindar-image="
+
+imageTargetSrc:targets/birthday.mind;
+
+autoStart:true;
+
+" embedded vr-mode-ui="enabled:false" device-orientation-permission-ui="enabled:false" renderer="
+
+colorManagement:true;
+
+physicallyCorrectLights:true;
+
+">
+
+        <a-camera active="false"></a-camera>
+
+        <a-entity id="target" mindar-image-target="targetIndex:0">
+
+        </a-entity>
+
+    </a-scene>
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
