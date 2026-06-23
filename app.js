@@ -261,7 +261,7 @@ window.onload = function () {
     <div class="love-heart">❤️</div>
 
     <div class="love-title">
-        I Like You
+        I Love You
     </div>
 
     <div class="love-subtitle">
