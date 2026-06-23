@@ -279,6 +279,8 @@ feel like the most beautiful. ✨
     `;
 
         replay.style.display = "block";
+        replay.style.visibility = "visible";
+        replay.style.opacity = "1";
 
     };
 }

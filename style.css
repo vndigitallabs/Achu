@@ -555,25 +555,29 @@ REPLAY
 
     position: fixed;
 
-    bottom: 30px;
+    bottom: max(20px, env(safe-area-inset-bottom));
 
     right: 20px;
 
-    padding: 15px 25px;
+    padding: 15px 28px;
 
     font-size: 20px;
 
+    font-weight: bold;
+
     border: none;
 
-    border-radius: 10px;
+    border-radius: 50px;
 
-    background: red;
+    background: linear-gradient(45deg, #ff0055, #ff4d6d);
 
-    color: white;
+    color: #fff;
 
     cursor: pointer;
 
-    z-index: 1600;
+    z-index: 99999;
+
+    box-shadow: 0 8px 25px rgba(255, 0, 85, .5);
 
 }
 
@@ -673,4 +677,25 @@ MOBILE
 
     }
 
+    #replay {
+
+        display: none;
+
+        position: fixed;
+
+        bottom: 25px;
+
+        right: 15px;
+
+        left: auto;
+
+        width: auto;
+
+        padding: 14px 24px;
+
+        font-size: 18px;
+
+        z-index: 99999;
+
+    }
 }
