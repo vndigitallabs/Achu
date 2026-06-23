@@ -190,34 +190,46 @@ window.onload = function () {
         specialVideoContainer.style.display = "flex";
 
         specialVideo.play();
+        skipSpecialVideo.style.display = "block";
 
     }
 
+    function showQuote() {
+        skipSpecialVideo.style.display = "none";
+
+        specialVideoContainer.style.display = "none";
+
+        currentStage = "quote";
+
+        loveMusic.play().catch(() => { });
+
+        quote.style.display = "block";
+
+        quoteTimer = setTimeout(() => {
+
+            quote.style.display = "none";
+
+            currentStage = "heart";
+
+            heart.style.display = "block";
+
+        }, 12000);
+
+    }
     specialVideo.onended = function () {
-        skipSpecialVideo.onclick = function () {
 
-            specialVideo.pause();
+        showQuote();
 
-            specialVideoContainer.style.display = "none";
+    };
+    skipSpecialVideo.onclick = function () {
 
-            currentStage = "quote";
+        specialVideo.pause();
 
-            loveMusic.play().catch(() => { });
+        specialVideo.currentTime = 0;
 
-            quote.style.display = "block";
+        showQuote();
 
-            quoteTimer = setTimeout(() => {
-
-                quote.style.display = "none";
-
-                currentStage = "heart";
-
-                heart.style.display = "block";
-
-            }, 12000);
-
-        };
-    }
+    };
 
     heart.onclick = function () {
 
